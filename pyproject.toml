@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automata-player"
+version = "0.1.0"
+description = "Play MuseScore scores on in-game instruments such as the Genshin Windsong Lyre and the NTE piano or guitar."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "AutomataPlayer" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+input = ["pynput>=1.7"]
+
+[project.scripts]
+automata-player = "automata_player.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
